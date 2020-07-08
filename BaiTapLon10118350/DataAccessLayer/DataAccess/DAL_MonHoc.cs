@@ -21,6 +21,21 @@ namespace BaiTapLon10118350.DataAccessLayer.DataAccess
             return dataTable;
         }
 
+        public DataTable FindGetMonHoc(string tenMonHoc)
+        {
+            // Kết nối với cơ sở dữ liệu
+            sqlCon.Open();
+            // Đổ dữ liệu vào sqlDataAdapter với 2 tham số truyền vào là câu truy vấn và chuỗi kết nối với cơ sở dữ liệu
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(string.Format("Select * From dbo.MonHoc Where tenMonHoc like  N'%{0}%'", tenMonHoc), strConnect);
+            // Tạo đối tượng dataTable để lưu trữ dữ liệu
+            DataTable dataTable = new DataTable();
+            // Đổ dữ liệu từ sqlDataAdapter vào dataTable
+            sqlDataAdapter.Fill(dataTable);
+            // Đóng kết nối với cơ sở dữ liệu
+            sqlCon.Close();
+            // Trả ra dữ liệu mong muốn theo đối tượng datatable
+            return dataTable;
+        }
         public int KiemTraMaTrung(string ma)
         {
             int i;

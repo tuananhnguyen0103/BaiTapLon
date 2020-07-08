@@ -18,6 +18,10 @@ namespace BaiTapLon10118350.BusinessLayer
         {
             return dalKhoa.getKhoa();
         }
+        public DataTable FindGetKhoa(string tenKhoa)
+        {
+            return dalKhoa.FindGetKhoa(tenKhoa);
+        }
         public int KiemTraMaTrung(string maKhoa)
         {
             return dalKhoa.KiemTraMaTrung(maKhoa);

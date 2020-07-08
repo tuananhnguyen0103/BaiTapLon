@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI_Khoa));
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.dtgridview = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.btnMoi = new System.Windows.Forms.Button();
@@ -52,6 +51,17 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.dtgridview = new System.Windows.Forms.DataGridView();
+            this.clMaKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clTenKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clVPK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtFind = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.layoutHeader = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.layoutHeaderInfo = new System.Windows.Forms.TableLayoutPanel();
@@ -62,18 +72,17 @@
             this.label10 = new System.Windows.Forms.Label();
             this.Layout1Chia = new System.Windows.Forms.TableLayoutPanel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.clMaKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clTenKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clVPK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgridview)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgridview)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
             this.layoutHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.layoutHeaderInfo.SuspendLayout();
@@ -86,8 +95,8 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel2.Controls.Add(this.dtgridview, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel6, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 93);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -96,22 +105,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 354F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(934, 354);
             this.tableLayoutPanel2.TabIndex = 1;
-            // 
-            // dtgridview
-            // 
-            this.dtgridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgridview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clMaKhoa,
-            this.clTenKhoa,
-            this.clVPK,
-            this.clSDT});
-            this.dtgridview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgridview.Location = new System.Drawing.Point(3, 3);
-            this.dtgridview.Name = "dtgridview";
-            this.dtgridview.Size = new System.Drawing.Size(647, 348);
-            this.dtgridview.TabIndex = 0;
-            this.dtgridview.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgridview_CellClick);
             // 
             // tableLayoutPanel1
             // 
@@ -401,6 +394,131 @@
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.Controls.Add(this.dtgridview, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.panel1, 0, 1);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(647, 348);
+            this.tableLayoutPanel6.TabIndex = 1;
+            // 
+            // dtgridview
+            // 
+            this.dtgridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgridview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clMaKhoa,
+            this.clTenKhoa,
+            this.clVPK,
+            this.clSDT});
+            this.dtgridview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgridview.Location = new System.Drawing.Point(3, 3);
+            this.dtgridview.Name = "dtgridview";
+            this.dtgridview.Size = new System.Drawing.Size(641, 307);
+            this.dtgridview.TabIndex = 1;
+            // 
+            // clMaKhoa
+            // 
+            this.clMaKhoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clMaKhoa.DataPropertyName = "maKhoa";
+            this.clMaKhoa.HeaderText = "Mã Khoa";
+            this.clMaKhoa.Name = "clMaKhoa";
+            // 
+            // clTenKhoa
+            // 
+            this.clTenKhoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clTenKhoa.DataPropertyName = "tenKhoa";
+            this.clTenKhoa.HeaderText = "Tên Khoa";
+            this.clTenKhoa.Name = "clTenKhoa";
+            // 
+            // clVPK
+            // 
+            this.clVPK.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clVPK.DataPropertyName = "vanPhongKhoa";
+            this.clVPK.HeaderText = "Văn Phòng";
+            this.clVPK.Name = "clVPK";
+            // 
+            // clSDT
+            // 
+            this.clSDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clSDT.DataPropertyName = "soDienThoai";
+            this.clSDT.HeaderText = "Số điện thoại";
+            this.clSDT.Name = "clSDT";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tableLayoutPanel7);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 316);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(641, 29);
+            this.panel1.TabIndex = 2;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 3;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel7.Controls.Add(this.txtFind, 2, 0);
+            this.tableLayoutPanel7.Controls.Add(this.button1, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.label8, 1, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(641, 29);
+            this.tableLayoutPanel7.TabIndex = 0;
+            // 
+            // txtFind
+            // 
+            this.txtFind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFind.Location = new System.Drawing.Point(451, 10);
+            this.txtFind.Margin = new System.Windows.Forms.Padding(3, 10, 30, 10);
+            this.txtFind.Multiline = true;
+            this.txtFind.Name = "txtFind";
+            this.txtFind.Size = new System.Drawing.Size(160, 9);
+            this.txtFind.TabIndex = 4;
+            this.txtFind.TextChanged += new System.EventHandler(this.txtFind_TextChanged_1);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(50, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(50, 0, 50, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 28);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Đổi tài khoản";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Location = new System.Drawing.Point(131, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(314, 29);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Tìm kiếm theo Tên Khoa";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // layoutHeader
             // 
             this.layoutHeader.ColumnCount = 3;
@@ -503,6 +621,7 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Email: tuananh010320@gmail.com";
             this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label10
             // 
@@ -539,34 +658,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // clMaKhoa
-            // 
-            this.clMaKhoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clMaKhoa.DataPropertyName = "maKhoa";
-            this.clMaKhoa.HeaderText = "Mã Khoa";
-            this.clMaKhoa.Name = "clMaKhoa";
-            // 
-            // clTenKhoa
-            // 
-            this.clTenKhoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clTenKhoa.DataPropertyName = "tenKhoa";
-            this.clTenKhoa.HeaderText = "Tên Khoa";
-            this.clTenKhoa.Name = "clTenKhoa";
-            // 
-            // clVPK
-            // 
-            this.clVPK.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clVPK.DataPropertyName = "vanPhongKhoa";
-            this.clVPK.HeaderText = "Văn Phòng";
-            this.clVPK.Name = "clVPK";
-            // 
-            // clSDT
-            // 
-            this.clSDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clSDT.DataPropertyName = "soDienThoai";
-            this.clSDT.HeaderText = "Số điện thoại";
-            this.clSDT.Name = "clSDT";
-            // 
             // GUI_Khoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -574,11 +665,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(940, 450);
             this.Controls.Add(this.Layout1Chia);
+            this.ImeMode = System.Windows.Forms.ImeMode.Close;
             this.Name = "GUI_Khoa";
             this.Text = "GUI_Khoa";
             this.Load += new System.EventHandler(this.GUI_Khoa_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgridview)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel14.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -586,6 +677,11 @@
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgridview)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
             this.layoutHeader.ResumeLayout(false);
             this.layoutHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -600,7 +696,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.DataGridView dtgridview;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel layoutHeader;
@@ -631,9 +726,16 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.DataGridView dtgridview;
         private System.Windows.Forms.DataGridViewTextBoxColumn clMaKhoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn clTenKhoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn clVPK;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSDT;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.TextBox txtFind;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BaiTapLon10118350
+namespace BaiTapLon10118350.PresentationLayer
 {
-    public partial class Form1 : Form
+    public partial class UserControl1 : Form
     {
-        public Form1()
+        public UserControl1()
         {
             InitializeComponent();
         }

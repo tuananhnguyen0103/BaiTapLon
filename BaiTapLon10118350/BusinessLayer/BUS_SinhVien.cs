@@ -22,6 +22,47 @@ namespace BaiTapLon10118350.BusinessLayer
         {
             return dalSinhVien.getSinhVien();
         }
+        public DataTable GetSinhVienTheoKhoa(string maKhoa)
+        {
+            return dalSinhVien.GetSinhVienTheoKhoa(maKhoa);
+        }
+        public int SoLuongGetSinhVienTheoKhoa(string maKhoa)
+        {
+            return dalSinhVien.SoLuongGetSinhVienTheoKhoa(maKhoa);
+        }
+        public DataTable GetSinhVienTheoDiem(int diem1,int diem2)
+        {
+            return dalSinhVien.GetSinhVienTheoDiem(diem1, diem2);
+        }
+        public int SoLuongGetSinhVienTheoDiem(int diem1,int diem2)
+        {
+            return dalSinhVien.SoLuongGetSinhVienTheoDiem(diem1, diem2);
+        }
+        public DataTable GetSinhVienTheoMonHoc(string maMonHoc)
+        {
+            return dalSinhVien.GetSinhVienTheoMonHoc(maMonHoc);
+        }
+        public int SoLuongGetSinhVienTheoMonHoc(string maMonHoc)
+        {
+            return dalSinhVien.SoLuongGetSinhVienTheoMonHoc(maMonHoc);
+        }
+
+        public DataTable GetSinhVienTheoLop(string maLop)
+        {
+            return dalSinhVien.getSinhVienTheoLop(maLop);
+        }
+        public DataTable ThongKeGetSinhVienTheoLop(string maLop)
+        {
+            return dalSinhVien.GetSinhVienTheoLop(maLop);
+        }
+        public int SoLuongGetSinhVienTheoLop(string maKhoa)
+        {
+            return dalSinhVien.SoLuongGetSinhVienTheoLop(maKhoa);
+        }
+        public DataTable GetSinHVienTheoTen(string tenSV)
+        {
+            return dalSinhVien.GetSinHVienTheoTen(tenSV);
+        }
         public int KiemTraMaTrung(string maSinhVien)
         {
             return dalSinhVien.KiemTraMaTrung(maSinhVien);
@@ -46,13 +87,6 @@ namespace BaiTapLon10118350.BusinessLayer
         {
             return dalSinhVien.getMaLop(tenLop);
         }
-        public string GetGioiTinh(int Number)
-        {
-            return dalSinhVien.getGioiTinh(Number);
-        }
-        public int GetGioiTinh(string gioiTinh)
-        {
-            return dalSinhVien.getGioiTinh(gioiTinh);
-        }
+        
     }
 }

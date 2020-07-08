@@ -18,7 +18,10 @@ namespace BaiTapLon10118350.BusinessLayer
         {
             return dalMonHoc.getMonHoc();
         }
-
+        public DataTable FindGetMonHoc(string tenMonHoc)
+        {
+            return dalMonHoc.FindGetMonHoc(tenMonHoc);
+        }
         public int KiemTraMaTrung(string maMonHoc)
         {
             return dalMonHoc.KiemTraMaTrung(maMonHoc);

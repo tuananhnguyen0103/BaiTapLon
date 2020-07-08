@@ -11,14 +11,11 @@ namespace BaiTapLon10118350.DataAccessLayer.DataAccess
     public class DBConnect
     {
         // Đường dẫn để kết nối cơ sở dữ liệu
-        public string strConnect = "";
+        public string strConnect = @"Data Source=DESKTOP-DCMU7ET;Initial Catalog = BTLWinFormQuanLyDiemSinhVien; Integrated Security = True";
+
         // Đối tượng thực hiện kết nối cơ sở dữ liệu thông qua đường dẫn
-        SqlConnection sqlCon;
+        public SqlConnection sqlCon = new SqlConnection("Data Source=DESKTOP-DCMU7ET;Initial Catalog=BTLWinFormQuanLyDiemSinhVien;Integrated Security=True");
+
         
-        public void GetStringConnect(string strConnect)
-        {
-            this.strConnect = strConnect;
-             sqlCon = new SqlConnection(strConnect);
-        }
     }
 }

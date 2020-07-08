@@ -10,7 +10,7 @@ namespace BaiTapLon10118350.DataAccessLayer.Entity
     {
         private string maSinhVien, maLop, tenSinhVien, queQuan;
         private DateTime ngaySinh;
-        private int gioiTinh;
+        private string gioiTinh;
         public string MaSinhVien
         {
             get { return maSinhVien; }
@@ -36,7 +36,7 @@ namespace BaiTapLon10118350.DataAccessLayer.Entity
             get { return ngaySinh; }
             set { ngaySinh = value; }
         }
-        public int GioiTinh
+        public string GioiTinh
         {
             get { return gioiTinh; }
             set { gioiTinh = value; }
@@ -45,7 +45,7 @@ namespace BaiTapLon10118350.DataAccessLayer.Entity
         {
 
         }
-        public DTO_SinhVien(string maSinhVien, string maLop, string tenSinhVien, string queQuan, DateTime ngaySinh, int gioiTinh)
+        public DTO_SinhVien(string maSinhVien, string maLop, string tenSinhVien, string queQuan, DateTime ngaySinh, string gioiTinh)
         {
             this.maSinhVien = maSinhVien;
             this.maLop = maLop;

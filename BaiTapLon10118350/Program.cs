@@ -17,7 +17,7 @@ namespace BaiTapLon10118350
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GUI_Khoa());
+            Application.Run(new GUI_Login());
         }
     }
 }

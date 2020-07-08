@@ -26,6 +26,21 @@ namespace BaiTapLon10118350.DataAccessLayer.DataAccess
             // Trả ra dữ liệu mong muốn theo đối tượng datatable
             return dataTable;
         }
+        public DataTable FindGetKhoa(string tenKhoa)
+        {
+            // Kết nối với cơ sở dữ liệu
+            sqlCon.Open();
+            // Đổ dữ liệu vào sqlDataAdapter với 2 tham số truyền vào là câu truy vấn và chuỗi kết nối với cơ sở dữ liệu
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(string.Format("Select * From dbo.Khoa Where tenKhoa like  N'%{0}%'", tenKhoa), strConnect);
+            // Tạo đối tượng dataTable để lưu trữ dữ liệu
+            DataTable dataTable = new DataTable();
+            // Đổ dữ liệu từ sqlDataAdapter vào dataTable
+            sqlDataAdapter.Fill(dataTable);
+            // Đóng kết nối với cơ sở dữ liệu
+            sqlCon.Close();
+            // Trả ra dữ liệu mong muốn theo đối tượng datatable
+            return dataTable;
+        }
         public int KiemTraMaTrung(string ma)
         {
            // Giá trị trả ra nếu là 1 là trùng, 0 là không tồn tại mã trong cơ sở dữ liệu
@@ -41,6 +56,7 @@ namespace BaiTapLon10118350.DataAccessLayer.DataAccess
             return i;
             
         }
+
         public void ThemKhoa(DTO_Khoa Khoa)
         {
             try

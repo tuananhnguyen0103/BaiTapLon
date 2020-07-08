@@ -21,6 +21,15 @@ namespace BaiTapLon10118350.BusinessLayer
         {
             return dalLop.getLop();
         }
+        public DataTable GetLopTheoKhoa(string maKhoa)
+        {
+            return dalLop.getLopThuocKhoa(maKhoa);
+        }
+       
+        public DataTable FindGetLop(string tenLop)
+        {
+            return dalLop.FindGetLOp(tenLop);
+        }
         public int KiemTraMaTrung(string maLop)
         {
             return dalLop.KiemTraMaTrung(maLop);

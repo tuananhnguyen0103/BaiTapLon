@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 
 using System.Windows.Forms;
 using BaiTapLon10118350.BusinessLayer;
-using BaiTapLon10118350.DataAccessLayer.DataAccess;
-using System.Text.RegularExpressions;
 using BaiTapLon10118350.DataAccessLayer.Entity;
 
 namespace BaiTapLon10118350.PresentationLayer
@@ -136,7 +134,8 @@ namespace BaiTapLon10118350.PresentationLayer
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-
+            GUI_MonHocReport gUI_MonHocReport = new GUI_MonHocReport();
+            gUI_MonHocReport.ShowDialog();
         }
 
         private void btnMoi_Click(object sender, EventArgs e)
@@ -150,7 +149,10 @@ namespace BaiTapLon10118350.PresentationLayer
             DialogResult result = MessageBox.Show("Bạn có muốn Thoát không?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                Close();
+                this.Hide();
+                MenuAdmin menuAdmin = new MenuAdmin();
+                menuAdmin.ShowDialog();
+                this.Close();
             }
         }
         private void cbbSTC_SelectedValueChanged(object sender, EventArgs e)
@@ -222,6 +224,18 @@ namespace BaiTapLon10118350.PresentationLayer
             }
         }
 
+        private void txtFind_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = busMonHoc.FindGetMonHoc(txtFind.Text);
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có đổi tài khoản?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }

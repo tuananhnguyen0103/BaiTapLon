@@ -29,6 +29,15 @@ namespace BaiTapLon10118350.DataAccessLayer.DataAccess
             sqlCon.Close();
             return dataTable;
         }
+        public DataTable getLopThuocKhoa(string maKhoa)
+        {
+            sqlCon.Open();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(string.Format("Select * From dbo.Lop Where maKhoa = '{0}'",maKhoa), strConnect);
+            DataTable dataTable = new DataTable();
+            sqlDataAdapter.Fill(dataTable);
+            sqlCon.Close();
+            return dataTable;
+        }
         public string getMaKhoa(string tenKhoa)
         {
             string maKhoa = "";
@@ -49,6 +58,21 @@ namespace BaiTapLon10118350.DataAccessLayer.DataAccess
             }
             sqlCon.Close();
             return maKhoa;
+        }
+        public DataTable FindGetLOp(string tenLop)
+        {
+            // Kết nối với cơ sở dữ liệu
+            sqlCon.Open();
+            // Đổ dữ liệu vào sqlDataAdapter với 2 tham số truyền vào là câu truy vấn và chuỗi kết nối với cơ sở dữ liệu
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(string.Format("Select * From dbo.Lop Where tenLop like  N'%{0}%'", tenLop), strConnect);
+            // Tạo đối tượng dataTable để lưu trữ dữ liệu
+            DataTable dataTable = new DataTable();
+            // Đổ dữ liệu từ sqlDataAdapter vào dataTable
+            sqlDataAdapter.Fill(dataTable);
+            // Đóng kết nối với cơ sở dữ liệu
+            sqlCon.Close();
+            // Trả ra dữ liệu mong muốn theo đối tượng datatable
+            return dataTable;
         }
         public string getTenKhoa(string maKhoa)
         {

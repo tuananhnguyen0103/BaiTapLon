@@ -82,7 +82,8 @@ namespace BaiTapLon10118350.PresentationLayer
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-
+            GUI_LopReport gUI_LopReport = new GUI_LopReport();
+            gUI_LopReport.ShowDialog();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -90,7 +91,10 @@ namespace BaiTapLon10118350.PresentationLayer
             DialogResult result = MessageBox.Show("Bạn có muốn Thoát không?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                Close();
+                this.Hide();
+                MenuAdmin menuAdmin = new MenuAdmin();
+                menuAdmin.ShowDialog();
+                this.Close();
             }
         }
 
@@ -172,6 +176,10 @@ namespace BaiTapLon10118350.PresentationLayer
             cbbKhoa.DataSource = busLop.GetKhoa();
             cbbKhoa.DisplayMember = "tenKhoa";
             cbbKhoa.ValueMember = "maKhoa";
+
+            cbbSearch.DataSource = busLop.GetKhoa();
+            cbbSearch.DisplayMember = "tenKhoa";
+            cbbSearch.ValueMember = "maKhoa";
             btnThem.Enabled = false;
         }
 
@@ -192,6 +200,33 @@ namespace BaiTapLon10118350.PresentationLayer
             }
         }
 
+        private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
+
+        private void btn_ThongTinLop_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = busLop.GetLop();
+        }
+
+        private void btn_SearchKhoa_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = busLop.GetLopTheoKhoa(cbbSearch.SelectedValue.ToString());
+        }
+
+        private void txtFind_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = busLop.FindGetLop(txtFind.Text.Trim());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có đổi tài khoản?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }

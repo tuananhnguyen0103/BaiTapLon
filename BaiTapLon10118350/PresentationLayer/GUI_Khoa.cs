@@ -11,6 +11,7 @@ using BaiTapLon10118350.BusinessLayer;
 using BaiTapLon10118350.DataAccessLayer.Entity;
 using System.Text.RegularExpressions;
 
+
 namespace BaiTapLon10118350.PresentationLayer
 {
     public partial class GUI_Khoa : Form
@@ -108,7 +109,8 @@ namespace BaiTapLon10118350.PresentationLayer
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-
+            UserControl1 ReportKhoa = new UserControl1();
+            ReportKhoa.ShowDialog();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -116,7 +118,10 @@ namespace BaiTapLon10118350.PresentationLayer
             DialogResult result = MessageBox.Show("Bạn có muốn Thoát không?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                Close();
+                this.Hide();
+                MenuAdmin menuAdmin = new MenuAdmin();
+                menuAdmin.ShowDialog();
+                this.Close();
             }
         }
 
@@ -216,6 +221,26 @@ namespace BaiTapLon10118350.PresentationLayer
         private void GUI_Khoa_Load(object sender, EventArgs e)
         {
             dtgridview.DataSource = busKhoa.GetKhoa();
+        }
+
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://mail.google.com/mail/u/0/");
+        }
+
+        private void txtFind_TextChanged_1(object sender, EventArgs e)
+        {
+            dtgridview.DataSource = busKhoa.FindGetKhoa(txtFind.Text.Trim());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có đổi tài khoản?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

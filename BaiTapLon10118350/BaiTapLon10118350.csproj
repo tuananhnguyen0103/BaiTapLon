@@ -33,8 +33,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,29 +57,53 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="XanderUI">
+      <HintPath>..\..\..\..\XanderUI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLayer\BUS_Acount.cs" />
     <Compile Include="BusinessLayer\BUS_Diem.cs" />
     <Compile Include="BusinessLayer\BUS_Khoa.cs" />
     <Compile Include="BusinessLayer\BUS_Lop.cs" />
     <Compile Include="BusinessLayer\BUS_MonHoc.cs" />
     <Compile Include="BusinessLayer\BUS_SinhVien.cs" />
+    <Compile Include="DataAccessLayer\DataAccess\DAL_Acount.cs" />
     <Compile Include="DataAccessLayer\DataAccess\DAL_Diem.cs" />
     <Compile Include="DataAccessLayer\DataAccess\DAL_Khoa.cs" />
     <Compile Include="DataAccessLayer\DataAccess\DAL_Lop.cs" />
     <Compile Include="DataAccessLayer\DataAccess\DAL_MonHoc.cs" />
     <Compile Include="DataAccessLayer\DataAccess\DAL_SinhVien.cs" />
     <Compile Include="DataAccessLayer\DataAccess\DBConnect.cs" />
+    <Compile Include="DataAccessLayer\Entity\DTO_Acount.cs" />
     <Compile Include="DataAccessLayer\Entity\DTO_Diem.cs" />
     <Compile Include="DataAccessLayer\Entity\DTO_Khoa.cs" />
     <Compile Include="DataAccessLayer\Entity\DTO_Lop.cs" />
     <Compile Include="DataAccessLayer\Entity\DTO_MonHoc.cs" />
     <Compile Include="DataAccessLayer\Entity\DTO_SinhVien.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
+    <Compile Include="PresentationLayer\CrystalReportDiem.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportDiem.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="PresentationLayer\CrystalReportLop.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportLop.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\CrystalReportMonHoc.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportMonHoc.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\CrystalReportSinhVien.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportSinhVien.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="PresentationLayer\GUI_Diem.cs">
       <SubType>Form</SubType>
@@ -74,11 +111,29 @@
     <Compile Include="PresentationLayer\GUI_Diem.Designer.cs">
       <DependentUpon>GUI_Diem.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\GUI_DiemReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_DiemReport.Designer.cs">
+      <DependentUpon>GUI_DiemReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\GUI_Khoa.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PresentationLayer\GUI_Khoa.Designer.cs">
       <DependentUpon>GUI_Khoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_KhoaReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_KhoaReport.Designer.cs">
+      <DependentUpon>GUI_KhoaReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_Login.Designer.cs">
+      <DependentUpon>GUI_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\GUI_Lop.cs">
       <SubType>Form</SubType>
@@ -86,11 +141,23 @@
     <Compile Include="PresentationLayer\GUI_Lop.Designer.cs">
       <DependentUpon>GUI_Lop.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\GUI_LopReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_LopReport.Designer.cs">
+      <DependentUpon>GUI_LopReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\GUI_MonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PresentationLayer\GUI_MonHoc.Designer.cs">
       <DependentUpon>GUI_MonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_MonHocReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_MonHocReport.Designer.cs">
+      <DependentUpon>GUI_MonHocReport.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\GUI_SinhVien.cs">
       <SubType>Form</SubType>
@@ -98,31 +165,153 @@
     <Compile Include="PresentationLayer\GUI_SinhVien.Designer.cs">
       <DependentUpon>GUI_SinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="PresentationLayer\UserControl1.cs">
+    <Compile Include="PresentationLayer\GUI_SinhVienReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_SinhVienReport.Designer.cs">
+      <DependentUpon>GUI_SinhVienReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_ThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_ThongKe.Designer.cs">
+      <DependentUpon>GUI_ThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_ThongKe_SinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_ThongKe_SinhVien.Designer.cs">
+      <DependentUpon>GUI_ThongKe_SinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_ThongKe_SinhVien_ChuaDat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_ThongKe_SinhVien_ChuaDat.Designer.cs">
+      <DependentUpon>GUI_ThongKe_SinhVien_ChuaDat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_ThongKe_SinhVien_DiemCao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_ThongKe_SinhVien_DiemCao.Designer.cs">
+      <DependentUpon>GUI_ThongKe_SinhVien_DiemCao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_ThongKe_SinhVien_Khoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_ThongKe_SinhVien_Khoa.Designer.cs">
+      <DependentUpon>GUI_ThongKe_SinhVien_Khoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_ThongKe_SinhVien_Lop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_ThongKe_SinhVien_Lop.Designer.cs">
+      <DependentUpon>GUI_ThongKe_SinhVien_Lop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_ThongKe_SinhVien_MonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\GUI_ThongKe_SinhVien_MonHoc.Designer.cs">
+      <DependentUpon>GUI_ThongKe_SinhVien_MonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\MenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\MenuAdmin.Designer.cs">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\ReportsKhoa.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportsKhoa.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UserControl2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PresentationLayer\UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="PresentationLayer\UserControl2.Designer.cs">
+      <DependentUpon>UserControl2.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PresentationLayer\CrystalReportDiem.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportDiem.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\CrystalReportLop.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportLop.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\CrystalReportMonHoc.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportMonHoc.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\CrystalReportSinhVien.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportSinhVien.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\GUI_Diem.resx">
       <DependentUpon>GUI_Diem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\GUI_DiemReport.resx">
+      <DependentUpon>GUI_DiemReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\GUI_Khoa.resx">
       <DependentUpon>GUI_Khoa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\GUI_KhoaReport.resx">
+      <DependentUpon>GUI_KhoaReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\GUI_Login.resx">
+      <DependentUpon>GUI_Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\GUI_Lop.resx">
       <DependentUpon>GUI_Lop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\GUI_LopReport.resx">
+      <DependentUpon>GUI_LopReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\GUI_MonHoc.resx">
       <DependentUpon>GUI_MonHoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\GUI_MonHocReport.resx">
+      <DependentUpon>GUI_MonHocReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\GUI_SinhVien.resx">
       <DependentUpon>GUI_SinhVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PresentationLayer\UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="PresentationLayer\GUI_SinhVienReport.resx">
+      <DependentUpon>GUI_SinhVienReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\GUI_ThongKe.resx">
+      <DependentUpon>GUI_ThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\GUI_ThongKe_SinhVien.resx">
+      <DependentUpon>GUI_ThongKe_SinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\GUI_ThongKe_SinhVien_ChuaDat.resx">
+      <DependentUpon>GUI_ThongKe_SinhVien_ChuaDat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\GUI_ThongKe_SinhVien_DiemCao.resx">
+      <DependentUpon>GUI_ThongKe_SinhVien_DiemCao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\GUI_ThongKe_SinhVien_Khoa.resx">
+      <DependentUpon>GUI_ThongKe_SinhVien_Khoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\GUI_ThongKe_SinhVien_Lop.resx">
+      <DependentUpon>GUI_ThongKe_SinhVien_Lop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\GUI_ThongKe_SinhVien_MonHoc.resx">
+      <DependentUpon>GUI_ThongKe_SinhVien_MonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\MenuAdmin.resx">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\ReportsKhoa.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportsKhoa.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UserControl2.resx">
+      <DependentUpon>UserControl2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -146,6 +335,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
